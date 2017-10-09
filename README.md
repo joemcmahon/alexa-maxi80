@@ -1,10 +1,10 @@
-# Alexa Maxi 80 Skill
+# Alexa RadioSpiral Skill
 
-This is the source code of the Alexa Maxi 80 Skill.
+This code implements an Alexa skill for RadioSpiral.
 
 ## Usage 
 
-Alexa, open Maxi 80  
+Alexa, open RadioSpiral  
 Alexa, stop
 
 ## Installation

@@ -21,11 +21,7 @@
 "use strict";
 
 var roleArn = 'arn:aws:iam::486652066693:role/alexa-audio-player';
-//var roleArn = 'arn:aws:iam::743602823695:role/lambda_maxi80_alexa';
-var region  = 'eu-west-1';
-//var event = require('../test/input_hello_intent.json');
-//var event = require('../test/input_launch_request.auth.json');
-//var event = require('../test/input_messagereceived.json');
+var region  = 'us-west-1';
 let event = require(process.argv[2]);
 
 

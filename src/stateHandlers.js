@@ -13,7 +13,7 @@ var stateHandlers = {
         controller.play.call(this, `Welcome to ${audioData.title}`);
     },
     'AMAZON.HelpIntent': function () {
-        var message = `Welcome to ${audioData.title}. I can bring you the best music of the eighties. You can play, stop, resume listening.  How can I help you ?`;
+        var message = `Welcome to ${audioData.title}, home of captivating electronica. You can play, stop, and resume listening.  How can I help you ?`;
         this.response.listen(message);
         this.emit(':responseReady');
     },
@@ -26,16 +26,16 @@ var stateHandlers = {
         this.callback(null, null)
     },
     'Unhandled': function () {
-        var message = 'Sorry, I could not understand...';
+        var message = 'Sorry, I didn\'t understand...';
         this.response.speak(message);
         this.emit(':responseReady');
     },
     'AMAZON.NextIntent': function () {
-        this.response.speak('This is radio, you have to wait for next track to play.');
+        this.response.speak('I'm sorry, but you\'ll have to wait for the station to play the next track.');
         this.emit(':responseReady');
     },
-    'AMAZON.PreviousIntent': function () { 
-        this.response.speak('This is radio, you can not go back in the playlist');
+    'AMAZON.PreviousIntent': function () {
+        this.response.speak('Though we beat back ceaselessly into the past, radio does not.');
         this.emit(':responseReady');
     },
 
@@ -51,10 +51,10 @@ var stateHandlers = {
     'AMAZON.ShuffleOnIntent': function () { this.emit('AMAZON.StartOverIntent');},
     'AMAZON.ShuffleOffIntent': function () { this.emit('AMAZON.StartOverIntent');},
 
-    'AMAZON.StartOverIntent': function () { 
-        this.response.speak('This is radio, you can not do that.  You can say stop or pause to stop listening.');
+    'AMAZON.StartOverIntent': function () {
+        this.response.speak('The station broadcasts continuously, so we can\'t. You can say stop or pause to stop listening.');
         this.emit(':responseReady');
-        
+
     },
     /*
      *  All Requests are received using a Remote Control. Calling corresponding handlers for each of them.
@@ -91,7 +91,7 @@ var controller = function () {
              *  Issuing AudioPlayer.Stop directive to stop the audio.
              *  Attributes already stored when AudioPlayer.Stopped request received.
              */
-            this.response.speak("Good bye.").audioPlayerStop();
+            this.response.speak("Have a pleasant tomorrow.").audioPlayerStop();
             this.emit(':responseReady');
         }
     }
